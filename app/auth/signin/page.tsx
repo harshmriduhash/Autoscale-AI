@@ -1,11 +1,17 @@
-'use client'
+"use client";
 
-import { signIn } from 'next-auth/react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Navbar } from '@/components/navbar'
-import { Github, Sparkles } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { signIn } from "next-auth/react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Navbar } from "@/components/navbar";
+import { Github, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function SignInPage() {
   return (
@@ -22,7 +28,11 @@ export default function SignInPage() {
               <CardHeader className="text-center space-y-4">
                 <motion.div
                   animate={{ rotate: [0, 360] }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
                   className="flex justify-center"
                 >
                   <Sparkles className="h-12 w-12 text-blue-400" />
@@ -35,10 +45,15 @@ export default function SignInPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
                   <Button
                     className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-lg py-6 glow-strong"
-                    onClick={() => signIn('github', { callbackUrl: '/dashboard' })}
+                    onClick={() =>
+                      signIn("github", { callbackUrl: "/dashboard" })
+                    }
                   >
                     <Github className="h-5 w-5 mr-2" />
                     Sign in with GitHub
@@ -50,5 +65,5 @@ export default function SignInPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
