@@ -135,4 +135,3 @@ Or use Supabase SQL Editor to run the Prisma schema.
 ## Support
 
 For issues or questions, please open an issue on GitHub.
-
